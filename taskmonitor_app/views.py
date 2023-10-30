@@ -8,7 +8,7 @@ from .models import User
 # Create your views here.
 
 
-def creation(request: HttpRequest) -> HttpResponse:
+def register(request: HttpRequest) -> HttpResponse:
     """Create a user account.
 
     Args:
