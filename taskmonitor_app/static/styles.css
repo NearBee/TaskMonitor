@@ -1,3 +1,16 @@
 /* BEGINNING OF LAYOUT.html */
 
+.welcomeText {
+    color: red;
+}
+
+#register_username::placeholder,
+#register_password::placeholder,
+#register_email::placeholder {
+    opacity: 0.5;
+    font-weight: bold;
+    color: red;
+}
+
+
 /* END OF LAYOUT.html */
