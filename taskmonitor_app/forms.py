@@ -13,18 +13,21 @@ class user_registration_form(forms.ModelForm):
                 attrs={
                     "class": "form-control mb-4 shadow-sm forminputBox",
                     "id": "register_username",
+                    "placeholder": "Username",
                 }
             ),
             "password": PasswordInput(
                 attrs={
                     "class": "form-control mb-4 shadow-sm forminputBox",
                     "id": "register_password",
+                    "placeholder": "Password",
                 }
             ),
             "email": EmailInput(
                 attrs={
                     "class": "form-control mb-4 shadow-sm forminputBox",
                     "id": "register_email",
+                    "placeholder": "Email",
                 }
             ),
         }
