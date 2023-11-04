@@ -1,7 +1,21 @@
-/* BEGINNING OF LAYOUT.html */
+/* BEGINNING OF layout.html */
+
+body {
+    background-color: #4e4e4e;
+    /* possibily change bg-color to an image also add specific background when in app*/
+}
+
+/* END OF layout.html */
+
+/* BEGINNING OF register.html */
 
 .welcomeText {
     color: red;
+}
+
+.registerWindow {
+    background-color: #696969;
+    /* filter: blur(1); To be modified possibly when adding an image to body */
 }
 
 #register_username::placeholder,
@@ -12,5 +26,12 @@
     color: red;
 }
 
+#register_username:focus::placeholder,
+#register_password:focus::placeholder,
+#register_email:focus::placeholder {
+    opacity: 1;
+    color: blue;
 
-/* END OF LAYOUT.html */
+}
+
+/* END OF register.html */
