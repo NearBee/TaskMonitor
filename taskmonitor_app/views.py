@@ -59,3 +59,17 @@ def register(request: HttpRequest) -> HttpResponse:
 )  # Need to create the login html
 def index(request):
     pass
+
+
+@login_required(login_url="login")
+def calendar_view(request, username):
+    # Calendar logic to be added here
+    # You can also access the user who is logged in with request
+
+    user = request.user
+    context = {
+        "username": username,
+        "user": user,
+    }
+
+    return render(request, "calendar.html", context)
