@@ -19,11 +19,22 @@
             </div>
         </div>
         <div class="row justify-content-center mt-3">
-            <div class="col-auto mt-3 mb-3">
-                {% for content in user_registration_form %}
-                {{content}}
-                {% endfor %}
+            <div class="col-md-6">
+                <form method='post' class="mt-3 mb-3">
+                    {% csrf_token %}
+                    {% for content in user_registration_form %}
+                    <div class="mb-3">
+                        {{ content.label_tag }}
+                        {{ content }}
+                        {% if content.help_text %}
+                        <small class="form-text text-muted">{{ content.help_text }}</small>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
+
         </div>
     </div>
 </div>
