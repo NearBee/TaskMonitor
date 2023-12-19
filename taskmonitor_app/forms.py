@@ -11,7 +11,7 @@ class user_registration_form(forms.ModelForm):
         widgets = {
             "username": TextInput(
                 attrs={
-                    "class": "form-control mb-4 shadow-sm forminputBox",
+                    "class": "form-control mb-2 shadow-sm forminputBox",
                     "id": "register_username",
                     "placeholder": "Username",
                 }
