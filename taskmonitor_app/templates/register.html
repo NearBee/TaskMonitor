@@ -23,7 +23,7 @@
                 <form method='post' class="mt-3 mb-3">
                     {% csrf_token %}
                     {% for content in user_registration_form %}
-                    <div class="mb-3">
+                    <div class="mb-3 {{content.name}}">
                         {{ content.label_tag }}
                         {{ content }}
                         {% if content.help_text %}
