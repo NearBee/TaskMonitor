@@ -34,4 +34,25 @@ body {
 
 }
 
+.mb-3.username {
+    height: 62px;
+}
+
+.form-text {
+    opacity: 0;
+    font-size: 0;
+    height: 0;
+}
+
+.mb-3.username .forminputBox:focus {
+    height: 88px;
+
+    /* Work in progress to get the forminputBox when focused to show the form text and change hegith of the mb-3 username */
+    .form-text {
+        opacity: 1;
+        font-size: 11px;
+        height: 10px;
+    }
+}
+
 /* END OF register.html */
