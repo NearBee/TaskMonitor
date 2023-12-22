@@ -38,4 +38,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var inputBox = document.querySelector('.mb-3.username input.forminputBox');
+
+        if (inputBox) {
+            inputBox.addEventListener('click', function () {
+                console.log('clicked');
+                var mb3Username = document.querySelector('.mb-3.username');
+                mb3Username.classList.add('clicked');
+            });
+        }
+    });
+</script>
 {% endblock %}
