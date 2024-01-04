@@ -34,10 +34,11 @@ body {
 
 }
 
-.mb-3.username {
+.username,
+.password,
+.email {
     height: 62px;
     transition: height 0.3s;
-    /* Transition subject to change possibly */
 }
 
 .form-text {
