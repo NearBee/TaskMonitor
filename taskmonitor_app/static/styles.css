@@ -48,9 +48,9 @@ body {
     /* Transition subject to change possibly */
 }
 
-/* .mb-3.username .forminputBox:focus {
-    height: 88px;
-} */
+.activeBox {
+    height: 88px !important;
+}
 
 .mb-3.username .forminputBox:focus+.form-text,
 .mb-3.username.clicked .form-text {
