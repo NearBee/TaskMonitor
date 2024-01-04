@@ -44,10 +44,16 @@
         var inputBox = document.querySelector('.mb-3.username input.forminputBox');
 
         if (inputBox) {
+            var mb3Username = document.querySelector('.mb-3.username');
+
+            // adding the activeBox class to (currently) the username box when the box is active
             inputBox.addEventListener('click', function () {
-                console.log('clicked');
-                var mb3Username = document.querySelector('.mb-3.username');
-                mb3Username.classList.add('clicked');
+                mb3Username.classList.add('activeBox');
+            });
+
+            // removing the activeBox class to (currently) the username box when the box is inactive
+            inputBox.addEventListener('blur', function () {
+                mb3Username.classList.remove('activeBox');
             });
         }
     });
