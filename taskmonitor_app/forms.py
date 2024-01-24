@@ -13,7 +13,7 @@ class user_registration_form(forms.ModelForm):
                 "placeholder": "Confirm Password",
             }
         ),
-        required=True,
+        required=True, max_length=24,
     )
 
     class Meta:
