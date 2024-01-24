@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     var inputBoxes = document.querySelectorAll('.mb-3 input.forminputBox');
-    var mb3Username = document.querySelector('.mb-3.username');
 
     if (inputBoxes) {
         inputBoxes.forEach(function (inputBox) {
