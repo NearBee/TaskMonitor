@@ -20,7 +20,8 @@ body {
 
 #register_username::placeholder,
 #register_password::placeholder,
-#register_email::placeholder {
+#register_email::placeholder,
+#register_password_confirmation::placeholder {
     opacity: 0.5;
     font-weight: bold;
     color: red;
@@ -28,7 +29,8 @@ body {
 
 #register_username:focus::placeholder,
 #register_password:focus::placeholder,
-#register_email:focus::placeholder {
+#register_email:focus::placeholder,
+#register_password_confirmation:focus::placeholder {
     opacity: 1;
     color: blue;
 
@@ -36,7 +38,8 @@ body {
 
 .username,
 .password,
-.email {
+.email,
+.password_confirmation {
     height: 62px;
     transition: height 0.3s;
 }
