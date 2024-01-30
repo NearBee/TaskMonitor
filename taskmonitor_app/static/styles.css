@@ -13,6 +13,14 @@ body {
     color: red;
 }
 
+.newUser {
+    color: blue;
+}
+
+#toastContainer {
+    color: white;
+}
+
 .registerWindow {
     background-color: #696969;
     /* filter: blur(1); To be modified possibly when adding an image to body */
