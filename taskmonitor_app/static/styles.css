@@ -21,7 +21,8 @@ body {
     color: white;
 }
 
-.registerWindow {
+.registerWindow,
+.loginWindow {
     background-color: #696969;
     /* filter: blur(1); To be modified possibly when adding an image to body */
 }
