@@ -54,13 +54,13 @@
     document.getElementById('toggleButton').addEventListener('click', function () {
         var existingUser = document.getElementById('existingUser');
         var newUserSection = document.getElementById('newUserSection');
-        var registrationFormSection = document.getElementById('registrationFormSection'); // Fixed typo here
+        var registrationFormSection = document.getElementById('registrationFormSection');
         showToast('Button clicked!');
 
         if (existingUser.style.display === 'none') {
-            existingUser.style.display = 'inline-block'; // Fixed typo here
+            existingUser.style.display = 'inline-block';
             newUserSection.style.display = 'none';
-            registrationFormSection.reset(); // Fixed variable name and reset the form when the button is clicked
+            registrationFormSection.reset();
         } else {
             existingUser.style.display = 'none';
             newUserSection.style.display = 'block';
@@ -75,7 +75,7 @@
         // Hide toast after 2000 milliseconds (2 seconds)
         setTimeout(function () {
             toastContainer.style.display = 'none';
-        }, 2000);
+        }, 1000);
     }
 </script>
 
