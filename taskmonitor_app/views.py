@@ -2,13 +2,13 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpRequest, JsonResponse
 
-from .forms import user_registration_form
+from .forms import UserRegistrationForm, LoginForm
 from .models import User
 
 # Create your views here.
 
 
-def register(request: HttpRequest) -> HttpResponse:
+def Register(request: HttpRequest) -> HttpResponse:
     """Create a user account.
 
     Args:
@@ -21,7 +21,7 @@ def register(request: HttpRequest) -> HttpResponse:
     """
 
     if request.method == "POST":
-        form = user_registration_form(request.POST)
+        form = UserRegistrationForm(request.POST)
 
         # two passwords required for confirmation
         password2 = request.POST["password_confirmation"]
@@ -30,7 +30,7 @@ def register(request: HttpRequest) -> HttpResponse:
             return render(
                 request,
                 "register.html",
-                {"user_registration_form": user_registration_form, "message": message},
+                {"UserRegistrationForm": UserRegistrationForm, "message": message},
             )
 
         if form.is_valid():
@@ -45,24 +45,44 @@ def register(request: HttpRequest) -> HttpResponse:
             return render(
                 request,
                 "creation",
-                {"user_registration_form": user_registration_form, "message": message},
+                {"UserRegistrationForm": UserRegistrationForm, "message": message},
             )
 
     else:
         return render(
-            request, "register.html", {"user_registration_form": user_registration_form}
+            request, "register.html", {"UserRegistrationForm": UserRegistrationForm}
         )
+
+
+def LoginView(request: HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        form = LoginForm(request.POST)
+
+        if form.is_valid():
+            email = form["email"].value()
+            password = form["password"].value()
+            user = User.object.get(email, password)  # type: ignore
+
+            login(request, user)  # type: ignore
+            return redirect("index")
+
+        else:
+            message = "Incorrect login credentials"
+            return render(request, "")
+
+    else:
+        return render(request, "login.html", {"LoginForm": LoginForm})
 
 
 @login_required(
     redirect_field_name="home/", login_url="login"
 )  # Need to create the login html
-def index(request):
+def Index(request):
     pass
 
 
 @login_required(login_url="login")
-def calendar_view(request, username):
+def CalendarView(request, username):
     # Calendar logic to be added here
     # You can also access the user who is logged in with request
 
