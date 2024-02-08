@@ -4,7 +4,7 @@ from django.forms import TextInput, EmailInput, PasswordInput
 from .models import User
 
 
-class user_registration_form(forms.ModelForm):
+class UserRegistrationForm(forms.ModelForm):
     password_confirmation = forms.CharField(
         widget=PasswordInput(
             attrs={
@@ -19,13 +19,13 @@ class user_registration_form(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = "username", "password", "password_confirmation", "email"
+        fields = "display_name", "password", "password_confirmation", "email"
         widgets = {
-            "username": TextInput(
+            "display_name": TextInput(
                 attrs={
                     "class": "form-control mb-2 shadow-sm forminputBox",
-                    "id": "register_username",
-                    "placeholder": "Username",
+                    "id": "register_display_name",
+                    "placeholder": "Display name",
                 }
             ),
             "password": PasswordInput(
@@ -53,3 +53,25 @@ class user_registration_form(forms.ModelForm):
             self.add_error("password_confirmation", "Passwords do not match")
 
         return cleaned_data
+
+
+class LoginForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ["email", "password"]
+        widgets = {
+            "email": EmailInput(
+                attrs={
+                    "class": "form-control mb-2 shadow-sm forminputBox",
+                    "id": "login_email",
+                    "placeholder": "Email",
+                }
+            ),
+            "password": PasswordInput(
+                attrs={
+                    "class": "form-control mb-4 shadow-sm forminputBox",
+                    "id": "login_password",
+                    "placeholder": "Password",
+                }
+            ),
+        }
