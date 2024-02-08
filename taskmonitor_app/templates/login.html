@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<div class="row justify-content-center mt-5">
+    <div class="col-auto mt-5">
+        <h2 class="fw-light fst-italic text-danger">
+            {% if message %} <!-- Stylize message here--> {{message}}{% endif %}
+        </h2>
+    </div>
+</div>
+<div class="container fluid w-75 vh-auto">
+    <div class="border border-danger border-2 rounded loginWindow">
+        <div class="row justify-content-center mt-4">
+            <div class="col-auto">
+                <span class="fs-4 welcomeText">Welcome</span>
+            </div>
+        </div>
+
+        <!-- Section for a user with a login -->
+        <div class="container" id="existingUserSection">
+            <div class="row justify-content-center">
+                <div class="col-auto" id="existingUserContainer">
+                    <span class="fs-5 filledContent">Traveler</span>
+                    Henlo I am current user
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-md-6">
+                    <form method="post" class="mt-3 mb-3" id="loginForm">
+                        {% csrf_token %}
+                        {% for content in LoginForm %}
+                        <div class="mb-3 {{ content.name }}">
+                            {{ content.label_tag }}
+                            {{ content }}
+                            {% if content.help_text %}
+                            <small class="form-text text-muted">{{ content.help_text }}</small>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- EndCurrentUserSection -->
+    </div>
+</div>
+
+{% endblock %}
