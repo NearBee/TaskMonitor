@@ -5,4 +5,4 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    pass
+    display_name = models.CharField(max_length=24, unique=True, blank=False, null=False)
