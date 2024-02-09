@@ -19,7 +19,7 @@ class UserRegistrationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = "display_name", "password", "password_confirmation", "email"
+        fields = ["display_name", "password", "password_confirmation", "email"]
         widgets = {
             "display_name": TextInput(
                 attrs={
