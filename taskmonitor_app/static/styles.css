@@ -27,7 +27,7 @@ body {
     /* filter: blur(1); To be modified possibly when adding an image to body */
 }
 
-#register_username::placeholder,
+#register_display_name::placeholder,
 #register_password::placeholder,
 #register_email::placeholder,
 #register_password_confirmation::placeholder {
@@ -36,7 +36,7 @@ body {
     color: red;
 }
 
-#register_username:focus::placeholder,
+#register_display_name:focus::placeholder,
 #register_password:focus::placeholder,
 #register_email:focus::placeholder,
 #register_password_confirmation:focus::placeholder {
@@ -45,9 +45,12 @@ body {
 
 }
 
-.username,
+.display_name,
+.email {
+    height: 62px;
+}
+
 .password,
-.email,
 .password_confirmation {
     height: 62px;
     transition: height 0.3s;
@@ -70,6 +73,12 @@ body {
     opacity: 1;
     font-size: 11px;
     height: 10px;
+}
+
+.buttonDesign {
+    -webkit-box-shadow: 7px 7px 5px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 7px 7px 5px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 7px 7px 5px -3px rgba(0, 0, 0, 0.75);
 }
 
 /* END OF register.html */
