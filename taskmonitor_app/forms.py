@@ -19,15 +19,8 @@ class UserRegistrationForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ["display_name", "password", "password_confirmation", "email"]
+        fields = ["email", "password", "password_confirmation", "display_name"]
         widgets = {
-            "display_name": TextInput(
-                attrs={
-                    "class": "form-control mb-2 shadow-sm forminputBox",
-                    "id": "register_display_name",
-                    "placeholder": "Display name",
-                }
-            ),
             "password": PasswordInput(
                 attrs={
                     "class": "form-control mb-4 shadow-sm forminputBox",
@@ -37,9 +30,16 @@ class UserRegistrationForm(forms.ModelForm):
             ),
             "email": EmailInput(
                 attrs={
-                    "class": "form-control mb-4 shadow-sm forminputBox",
+                    "class": "form-control mb-4 shadow-sm",
                     "id": "register_email",
                     "placeholder": "Email",
+                }
+            ),
+            "display_name": TextInput(
+                attrs={
+                    "class": "form-control mb-2 shadow-sm",
+                    "id": "register_display_name",
+                    "placeholder": "Display name",
                 }
             ),
         }
