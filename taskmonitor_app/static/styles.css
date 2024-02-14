@@ -68,8 +68,8 @@ body {
     height: 88px !important;
 }
 
-.mb-3.username .forminputBox:focus+.form-text,
-.mb-3.username.clicked .form-text {
+.mb-3.password .forminputBox:focus+.form-text,
+.mb-3.password.clicked .form-text {
     opacity: 1;
     font-size: 11px;
     height: 10px;
