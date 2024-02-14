@@ -37,6 +37,10 @@
                             {% if content.help_text %}
                             <small class="form-text text-muted">{{ content.help_text }}</small>
                             {% endif %}
+                            {% if content.name == 'password' %}
+                            <small class="form-text text-muted">Password must be at least 8 characters long.</small>
+                            <!-- VERY TEMP addition for testing purposes of password custom "help" text -->
+                            {% endif %}
                         </div>
                         {% endfor %}
                         <div class="row justify-content-center column-gap-4">
