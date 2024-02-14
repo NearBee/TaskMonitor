@@ -23,7 +23,7 @@ class UserRegistrationForm(forms.ModelForm):
         widgets = {
             "password": PasswordInput(
                 attrs={
-                    "class": "form-control mb-4 shadow-sm forminputBox",
+                    "class": "form-control mb-1 shadow-sm forminputBox",
                     "id": "register_password",
                     "placeholder": "Password",
                 },
