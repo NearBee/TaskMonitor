@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (inputBoxes) {
         inputBoxes.forEach(function (inputBox) {
 
-            // adding the activeBox class to (currently) the username box when the box is active
+            // adding the activeBox class to (currently) the password box when the box is active
             inputBox.addEventListener('click', function () {
                 var parentBox = inputBox.closest('.mb-3');
                 if (parentBox) {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            // removing the activeBox class to (currently) the username box when the box is inactive
+            // removing the activeBox class to (currently) the password box when the box is inactive
             inputBox.addEventListener('blur', function () {
                 var parentBox = inputBox.closest('.mb-3');
                 if (parentBox) {
