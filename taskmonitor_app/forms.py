@@ -8,7 +8,7 @@ class UserRegistrationForm(forms.ModelForm):
     password_confirmation = forms.CharField(
         widget=PasswordInput(
             attrs={
-                "class": "form-control mb-4 shadow-sm forminputBox",
+                "class": "form-control mb-4 shadow-sm",
                 "id": "register_password_confirmation",
                 "placeholder": "Confirm Password",
             }
