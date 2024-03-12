@@ -10,11 +10,11 @@ body {
 /* BEGINNING OF register.html */
 
 .welcomeText {
-    color: red;
+    color: #1b1811;
 }
 
 .newUser {
-    color: blue;
+    color: #28251d;
 }
 
 #toastContainer {
@@ -31,9 +31,18 @@ body {
 #register_password::placeholder,
 #register_email::placeholder,
 #register_password_confirmation::placeholder {
-    opacity: 0.5;
-    font-weight: bold;
-    color: red;
+    opacity: 30%;
+    font-weight: light;
+    color: black;
+    font-size: 12px;
+}
+
+div.mb-3.email>label,
+div.mb-3.password>label,
+div.mb-3.password_confirmation>label,
+div.mb-3.display_name>label {
+    color: #3c3931;
+    opacity: 75%;
 }
 
 #register_display_name:focus::placeholder,
