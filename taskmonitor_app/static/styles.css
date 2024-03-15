@@ -27,32 +27,25 @@ body {
     /* filter: blur(1); To be modified possibly when adding an image to body */
 }
 
-#register_display_name::placeholder,
-#register_password::placeholder,
-#register_email::placeholder,
-#register_password_confirmation::placeholder {
-    opacity: 30%;
+
+#registrationForm > div.mb-3.email > div > label,
+#registrationForm > div.mb-3.password > div >label,
+#registrationForm > div.mb-3.password_confirmation > div >label,
+#registrationForm > div.mb-3.display_name > div >label {
+    opacity: 60%;
     font-weight: light;
     color: black;
-    font-size: 12px;
+    font-size: 14px;
 }
 
-div.mb-3.email>label,
-div.mb-3.password>label,
-div.mb-3.password_confirmation>label,
-div.mb-3.display_name>label {
-    color: #3c3931;
-    opacity: 75%;
-}
-
-#register_display_name:focus::placeholder,
+/* #register_display_name:focus::placeholder,
 #register_password:focus::placeholder,
 #register_email:focus::placeholder,
 #register_password_confirmation:focus::placeholder {
     opacity: 1;
     color: blue;
 
-}
+} */
 
 .display_name,
 .email {

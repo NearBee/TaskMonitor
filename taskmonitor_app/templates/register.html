@@ -32,8 +32,10 @@
                         {% csrf_token %}
                         {% for content in UserRegistrationForm %}
                         <div class="mb-3 {{content.name}}">
-                            {{ content.label_tag }}
-                            {{ content }}
+                            <div class="form-floating mb-3">
+                                {{ content }}
+                                <label for="floatingInput">{{ content.label_tag }}</label>
+                            </div>
                             {% if content.help_text %}
                             <small class="form-text text-muted">{{ content.help_text }}</small>
                             {% endif %}
