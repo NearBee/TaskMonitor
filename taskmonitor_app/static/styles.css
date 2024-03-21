@@ -38,15 +38,6 @@ body {
     font-size: 14px;
 }
 
-/* #register_display_name:focus::placeholder,
-#register_password:focus::placeholder,
-#register_email:focus::placeholder,
-#register_password_confirmation:focus::placeholder {
-    opacity: 1;
-    color: blue;
-
-} */
-
 .display_name,
 .email {
     height: 62px;
