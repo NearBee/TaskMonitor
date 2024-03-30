@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpRequest, JsonResponse
+from django.http import HttpRequest, HttpResponse, JsonResponse
+from django.shortcuts import redirect, render
 
-from .forms import UserRegistrationForm, LoginForm
+from .forms import LoginForm, UserRegistrationForm
 from .models import User
 
 # Create your views here.
@@ -34,11 +35,16 @@ def Register(request: HttpRequest) -> HttpResponse:
             )
 
         if form.is_valid():
-            username = form["username"].value()
             password = form["password"].value()
             email = form["email"].value()
-            user = User.objects.create_user(username, password, email)  # type: ignore
-            login(request, user)  # type: ignore
+
+            # display_name = form["display_name"].value()  || original method to createa a display name
+            # Display name TEMPORARILY just using the beginning of the email
+            # This is a temp(perhaps permanent) solution to a unique constraint with display_name
+            display_name = email.rstrip("@")
+
+            user = User.objects.create_user(display_name, password, email)
+            login(request, user)
             return redirect("index")  # Needs to be made
         else:
             message = "Sorry something went wrong..."
