@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import TextInput, EmailInput, PasswordInput
+from django.forms import EmailInput, PasswordInput, TextInput
 
 from .models import User
 
@@ -14,7 +14,19 @@ class UserRegistrationForm(forms.ModelForm):
             }
         ),
         required=True,
-        max_length=128,
+        max_length=24,
+    )
+
+    display_name = forms.CharField(
+        widget=TextInput(
+            attrs={
+                "class": "form-control mb-2 shadow-sm",
+                "id": "register_display_name",
+                "placeholder": "Display name",
+            }
+        ),
+        required=False,
+        max_length=24,
     )
 
     class Meta:
